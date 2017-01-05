@@ -1,0 +1,35 @@
+* {
+	font-family: "Courier New", Courier, monospace;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #eaeaea;
+}
+
+fieldset {
+	width: 100px;
+	margin: 0 auto;
+}
+
+textarea {
+	width: 450px;
+	height: 125px;
+	border: none;
+	outline: 0px;
+	resize: none;
+}
+
+input[type="text"] {
+	border-radius: 5px;
+	border: none;
+	outline: 0px;
+	height: 25px;
+	padding: 5px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+}
