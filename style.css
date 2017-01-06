@@ -33,3 +33,64 @@ input[type="text"] {
 input[type="color"]::-webkit-color-swatch {
 	border: none;
 }
+
+#content {
+	padding-bottom: 20px;
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#btn-color {
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	border-radius: 50px;
+	border: none;
+	outline: none;
+	position: relative;
+	top: 5px;
+	right: 155px;
+}
+
+.note {
+	min-height: 18px;
+	border-radius: 5px;
+	*float: left;
+	margin-top: 7px;
+	padding: 3px;
+	padding-right: 12px;
+	position: relative;
+}
+
+.note-delete {
+	cursor: pointer;
+	position: absolute;
+	top: 2px;
+	left: 485px;
+	display: none;
+}
+
+.note:hover .note-delete {
+	display: block;
+}
+
+.btn {
+	cursor: pointer;
+	width: 100px;
+	height: 30px;
+	background-color: #8BAD39;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	position: relative;
+	right: 14px;
+}
+
+.wrap {
+	width: 500px;
+	background-color: white;
+	padding: 15px;
+	margin-bottom: 25px;
+	border-radius: 5px;
+}
