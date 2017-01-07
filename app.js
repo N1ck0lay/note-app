@@ -82,3 +82,15 @@ var NotesGrid = React.createClass({
 		);
 	}
 });
+
+
+
+var Note = React.createClass({
+	render: function() {
+		return(
+			<div className="note" style={{'backgroundColor': this.props.color}}> {this.props.children} 
+				<span className="note-delete" onClick={this.props.onDelete}> × </span>
+			</div>
+		);
+	}
+});
