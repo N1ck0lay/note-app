@@ -63,3 +63,22 @@ var NoteEditor = React.createClass({
 		);
 	}
 });
+
+
+
+var NotesGrid = React.createClass({
+	render: function() {
+
+		var onNoteDelete = this.props.onNoteDelete;
+
+		return(
+			<div>
+				{
+					this.props.notes.map(function(note) {
+						return <Note key={note.id} color={note.color} onDelete={onNoteDelete.bind(null, note)}> {note.text} </Note>
+					})
+				}
+			</div>
+		);
+	}
+});
