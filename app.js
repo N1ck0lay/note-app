@@ -94,3 +94,35 @@ var Note = React.createClass({
 		);
 	}
 });
+
+
+
+var NoteApp = React.createClass({
+	getInitialState: function() {
+		return {
+			notes: []
+		};
+	},
+
+	componentDidMount: function() {
+		var localNotes = JSON.parse(localStorage.getItem('notes'));
+		if(localNotes) {
+			this.setState({ notes: localNotes });
+		}
+	},
+
+	//componentDidUpdate: function() {
+	//	return this._updateLocalStorage;
+	//},
+
+	_updateLocalStorage: function() {
+		var notes = JSON.stringify(this.state.notes);
+		localStorage.setItem('notes', notes);
+	},
+
+	handleNoteAdd: function(newNote) {
+		var newNotes = this.state.notes.slice();
+		newNotes.unshift(newNote);
+		// , this._updateLocalStorage - это колбэк что бы обновлялась страничка при добавлении данных
+		this.setState({ notes: newNotes}, this._updateLocalStorage);
+	},
