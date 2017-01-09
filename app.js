@@ -126,3 +126,24 @@ var NoteApp = React.createClass({
 		// , this._updateLocalStorage - это колбэк что бы обновлялась страничка при добавлении данных
 		this.setState({ notes: newNotes}, this._updateLocalStorage);
 	},
+
+	handleNoteDelete: function(note) {
+		var noteID = note.id;
+		var newNotes = this.state.notes.filter(function(note) {
+			return note.id !== noteID;
+		});
+		this.setState({ notes: newNotes}, this._updateLocalStorage);
+	},
+
+	handleSearch: function(e) {
+		var searchData = e.target.value.toLowerCase();
+		var displayData = this.state.notes.filter(function(res) {
+			var searchValue = res.text.toLowerCase();
+			return searchValue.indexOf(searchData) !== -1;
+
+			console.log(searchValue);
+		});
+		console.log(searchData, displayData);
+		console.log(this.state.notes);
+		this.setState({notes: displayData}/*, this._updateLocalStorage*/);
+	},
