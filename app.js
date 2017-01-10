@@ -147,3 +147,22 @@ var NoteApp = React.createClass({
 		console.log(this.state.notes);
 		this.setState({notes: displayData}/*, this._updateLocalStorage*/);
 	},
+
+	render: function() {
+		return(
+			<div>
+				App have some bugs, but I am working on it :)
+				<h1>Note App</h1>
+				<NoteEditor addNote={this.handleNoteAdd} search={this.handleSearch} />
+				<NotesGrid notes={this.state.notes} onNoteDelete={this.handleNoteDelete}/>	
+			</div>
+	);	
+	}
+});
+
+
+
+ReactDOM.render(
+	<NoteApp />,
+	document.getElementById('content')
+);
